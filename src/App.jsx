@@ -47,7 +47,7 @@ const pizzaData = [
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       <Menu />
       <Footer />
@@ -82,7 +82,7 @@ function Menu() {
           </ul>
         </>
       ) : (
-        <p>We're Still Working on Our Menu , Please comeback Later :)</p>
+        <p>We're Still Working on Our Menu , Please comeback Later </p>
       )}
     </main>
   );
@@ -90,10 +90,10 @@ function Menu() {
 
 function Pizaa({ pizaaobj }) {
   return (
-    <li className="pizza">
+    <li className={`pizza ${pizaaobj.soldOut ? "sold-out" : ""}`}>
       <img src={pizaaobj.photoName} alt={pizaaobj.name} />
       <div>
-        <h3>{pizaaobj.photoName}</h3>
+        <h3>{pizaaobj.name}</h3>
         <p>{pizaaobj.ingredients}</p>
         <span>{pizaaobj.soldOut ? "SOLD OUT" : pizaaobj.price}</span>
       </div>
